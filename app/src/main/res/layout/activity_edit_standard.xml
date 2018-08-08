@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_back"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Standard Name:"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:textColor="#ffffffff"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/enteredStandard"
+                android:layout_width="match_parent"
+                android:layout_weight="2.3"
+                android:layout_height="0dp"
+                android:ems="10"
+                android:gravity="bottom"
+                android:textColor="#ffffffff"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <Switch
+        android:id="@+id/standardType"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Achievement Standard"
+        android:textColor="#ffffffff"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        android:onClick="onClick"
+        android:gravity="center"/>
+
+    <Switch
+        android:id="@+id/examType"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:onClick="onClick"
+        android:textColor="#ffffffff"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        android:text="Internal"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Credits: "
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#ffffffff"/>
+        <TextView
+            android:id="@+id/credits"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="4"
+            android:textSize="20dp"
+            android:textColor="#ffffffff"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/up"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:scaleType="fitEnd"
+                android:src="@drawable/up_arrow"
+                android:onClick="onClick"/>
+
+            <ImageView
+                android:id="@+id/down"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/down_arrow"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:onClick="onClick"
+            android:padding="30dp"
+            android:background="@drawable/current_level_back"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:onClick="onClick"
+            android:padding="30dp"
+            android:background="@drawable/current_level_back"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+</LinearLayout>
