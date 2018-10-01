@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/app_back">
+    android:background="?attr/backgroundcolor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -108,7 +108,7 @@
             android:text="Goal Grade"
             android:layout_gravity="bottom"
             android:gravity="center"
-            android:textColor="#ffffffff"/>
+            android:textColor="?attr/textcolor"/>
 
         <TextView
             android:id="@+id/mockGradeTxt"
@@ -118,7 +118,7 @@
             android:text="Mock Grade"
             android:layout_gravity="bottom"
             android:gravity="center"
-            android:textColor="#ffffffff"/>
+            android:textColor="?attr/textcolor"/>
 
         <TextView
             android:id="@+id/finalGradeTxt"
@@ -128,7 +128,7 @@
             android:text="Final Grade"
             android:layout_gravity="bottom"
             android:gravity="center"
-            android:textColor="#ffffffff"/>
+            android:textColor="?attr/textcolor"/>
     </LinearLayout>
 
     <LinearLayout
@@ -171,4 +171,14 @@
             android:onClick="onFirstClick"/>
 
     </LinearLayout>
+    <ImageView
+        android:id="@+id/done"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitEnd"
+        android:layout_weight="0.8"
+        android:layout_margin="13dp"
+        android:gravity="right"
+        android:src="@drawable/tick_resized"
+        android:onClick="onClick"/>
 </LinearLayout>

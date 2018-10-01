@@ -1,11 +1,39 @@
 <resources>
 
     <!-- Base application theme. -->
+
+    <!-- Night mode application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="highlightcolor">#66ffff</item>
+        <item name="backgroundcolor">#ff333333</item>
+        <item name="textcolor">#ffffffff</item>
+        <item name="inversetextcolor">#000000</item>
+        <item name="achievedtextcolor">#ff24a7ff</item>
+        <item name="merittextcolor">#ff26ff31</item>
+        <item name="excellencetextcolor">#fff7ee39</item>
+        <item name="subjectbackgroundcolor">#ff003333</item>
+        <item name="subjectbordercolor">#8866ffff</item>
+    </style>
+
+    <!-- Day mode application theme. -->
+    <style name="DayTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#303F9F</item>
+        <item name="highlightcolor">#303F9F</item>
+        <item name="backgroundcolor">#ffffffff</item>
+        <item name="textcolor">#000000</item>
+        <item name="inversetextcolor">#ffffffff</item>
+        <item name="achievedtextcolor">#000000</item>
+        <item name="merittextcolor">#000000</item>
+        <item name="excellencetextcolor">#000000</item>
+        <item name="subjectbackgroundcolor">#88ffff99</item>
+        <item name="subjectbordercolor">#000000</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

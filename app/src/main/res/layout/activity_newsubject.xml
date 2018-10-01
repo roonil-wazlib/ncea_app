@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/app_back">
+    android:background="?attr/backgroundcolor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter subject name: "
-            android:textColor="#ffffffff"
+            android:textColor="?attr/textcolor"
             android:textSize="25sp"
             android:layout_gravity="bottom"
             android:paddingLeft="30sp"/>
@@ -37,8 +37,10 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:ems="10"
-            android:textColor="#ffffffff"
-            android:textSize="25sp" />
+            android:textColor="?attr/textcolor"
+            android:textSize="25sp"
+            android:inputType="textCapWords|textAutoCorrect"
+            android:imeOptions="actionSend"/>
         <!-- save button -->
         <Button
             android:id="@+id/savebtn"
@@ -50,7 +52,7 @@
             android:gravity="top"
             android:onClick="onClick"
             android:text="->"
-            android:textColor="#ffffffff"
+            android:textColor="?attr/textcolor"
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>

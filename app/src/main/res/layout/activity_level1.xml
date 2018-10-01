@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/app_back">
+    android:background="?attr/backgroundcolor">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:paddingBottom="0dp"
         android:onClick="onResultsClick">
 
@@ -18,7 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="#ff4488ff"
+            android:textColor="?attr/achievedtextcolor"
             android:gravity="center"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -29,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="#ff44ff88"
+            android:textColor="?attr/merittextcolor"
             android:gravity="center"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -40,7 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="#ffff0000"
+            android:textColor="?attr/excellencetextcolor"
             android:gravity="center"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -53,6 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:background="#ff000000"
         android:layout_marginBottom="5dp"
         android:onClick="onResultsClick">
@@ -61,7 +65,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#aa4488ff"
+            android:background="#ff24a7ff"
+            android:textColor="#000000"
             android:gravity="center"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -71,7 +76,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#aa44ff88"
+            android:background="#ff26ff31"
+            android:textColor="#000000"
             android:gravity="center"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -82,7 +88,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#aaff0000"
+            android:background="#fff7ee39"
+            android:textColor="#000000"
             android:gravity="center"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -117,7 +124,7 @@
                 android:id="@+id/m"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ff44ff88"
+                android:textColor="?attr/merittextcolor"
                 android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -139,7 +146,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#aaff0000"
+                    android:background="#fff7ee39"
                     android:gravity="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -149,8 +156,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#aa44ff88"
+                    android:background="#ff26ff31"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -176,7 +184,7 @@
                 android:id="@+id/e"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffff0000"
+                android:textColor="?attr/excellencetextcolor"
                 android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -197,10 +205,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#aaff0000"
+                    android:background="#fff7ee39"
                     android:gravity="center"
                     android:textSize="20sp"
-                    android:textColor="#ffffd000"
+                    android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
@@ -221,8 +229,9 @@
         android:layout_height="wrap_content"
         android:text="Click for more results"
         android:textSize="8sp"
-        android:textColor="#ffffffff"
+        android:textColor="?attr/textcolor"
         android:paddingLeft="10dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -237,6 +246,8 @@
             android:background="@drawable/current_level_back"
             android:gravity="center"
             android:text="Level 1"
+            android:textColor="?attr/inversetextcolor"
+            android:textSize="13sp"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
@@ -248,7 +259,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:onClick="onClick"
-            android:text="Level 2" />
+            android:text="Level 2"
+            android:textSize="13sp"
+            android:padding="2dp"/>
 
         <Button
             android:id="@+id/Level3"
@@ -257,7 +270,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:onClick="onClick"
-            android:text="Level 3" />
+            android:text="Level 3"
+            android:textSize="13sp"
+            android:padding="2dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -265,52 +280,27 @@
         android:layout_height="0dp"
         android:layout_weight="9"
         android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/subjectList"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="8">
-        </ListView>
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/subjectList1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ListView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/help"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:background="@android:color/transparent"
-                android:text="?"
-                android:textColor="#ffffffff"
-                android:textSize="45sp"
-                android:onClick="onClick"/>
-
-            <TextView
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/add_subject"
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="match_parent"
-                android:text="Add Subject:"
-                android:textColor="#ffff0000"
-                android:textSize="20sp"
-                android:gravity="center|end"
-                android:onClick="onClick"/>
-            <Button
-                android:id="@+id/newSubject"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:background="@android:color/transparent"
+                android:layout_gravity="end|bottom"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/fab_plus"
+                android:layout_margin="16dp"
                 android:onClick="onClick"
-                android:text="+"
-                android:textColor="#ffff0000"
-                android:textSize="45sp" />
-        </LinearLayout>
+                app:elevation="4dp"/>
+        </FrameLayout>
 
     </LinearLayout>
 

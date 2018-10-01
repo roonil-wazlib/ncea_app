@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.elfho.ncearesultstracker.Level2Activity"
+    tools:context="com.creation.elfho.ncearesultstracker.Level2Activity"
     tools:showIn="@layout/activity_level2">
 
     <ListView

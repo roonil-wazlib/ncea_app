@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.elfho.ncearesultstracker">
+    package="com.creation.elfho.ncearesultstracker">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Level2Activity"
+            android:name="com.creation.elfho.ncearesultstracker.SplashScreenActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,17 +19,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Level1Activity"/>
-        <activity android:name=".Level3Activity"/>
-        <activity android:name=".SubjectActivity"/>
-        <activity android:name=".NewSubjectActivity"/>
-        <activity android:name=".NewStandardActivity"/>
-        <activity android:name=".NewStandardDetailsActivity"/>
-        <activity android:name=".StandardInfoActivity"/>
-        <activity android:name=".AddGradeActivity"/>
-        <activity android:name=".ResultsActivity"/>
-        <activity android:name=".EditStandardActivity"/>
-        <activity android:name=".HelpActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.Level1Activity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.Level3Activity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.SubjectActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.NewSubjectActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.NewStandardActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.NewStandardDetailsActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.StandardInfoActivity" />
+        <activity android:name="com.creation.elfho.ncearesultstracker.AddGradeActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.ResultsActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.EditStandardActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.HelpActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.StandardsOverviewActivity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.Level2Activity"/>
+        <activity android:name="com.creation.elfho.ncearesultstracker.SettingsActivity"/>
 
     </application>
 </manifest>

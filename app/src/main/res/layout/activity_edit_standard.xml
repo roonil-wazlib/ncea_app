@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_back"
+    android:background="?attr/backgroundcolor"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:text="Standard Name:"
             android:textSize="18dp"
             android:gravity="center"
-            android:textColor="#ffffffff"/>
+            android:textColor="?attr/textcolor"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -33,7 +33,7 @@
                 android:layout_height="0dp"
                 android:ems="10"
                 android:gravity="bottom"
-                android:textColor="#ffffffff"
+                android:textColor="?attr/textcolor"
                 android:textSize="18dp" />
 
             <LinearLayout
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:text="Achievement Standard"
-        android:textColor="#ffffffff"
+        android:textColor="?attr/textcolor"
         android:textSize="20dp"
         android:layout_weight="1"
         android:onClick="onClick"
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:onClick="onClick"
-        android:textColor="#ffffffff"
+        android:textColor="?attr/textcolor"
         android:textSize="20dp"
         android:layout_weight="1"
         android:text="Internal"
@@ -83,7 +83,7 @@
             android:text="Credits: "
             android:textSize="20dp"
             android:gravity="center"
-            android:textColor="#ffffffff"/>
+            android:textColor="?attr/textcolor"/>
         <TextView
             android:id="@+id/credits"
             android:layout_width="0dp"
@@ -92,7 +92,7 @@
             android:gravity="center_vertical"
             android:text="4"
             android:textSize="20dp"
-            android:textColor="#ffffffff"/>
+            android:textColor="?attr/textcolor"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -135,6 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Cancel"
+            android:textColor="?attr/inversetextcolor"
             android:onClick="onClick"
             android:padding="30dp"
             android:background="@drawable/current_level_back"
@@ -146,6 +147,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Save"
+            android:textColor="?attr/inversetextcolor"
             android:onClick="onClick"
             android:padding="30dp"
             android:background="@drawable/current_level_back"
