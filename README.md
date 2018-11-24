@@ -1,6 +1,8 @@
-"# ncea_results_tracker" 
+"# ncea_results_tracker"
+
 If you want to use this code to help with your own
-projects or learning feel free to fork this project.
+projects or learning feel free to download this project.
+
 
 I am also more than happy for anyone to either suggest
 improvements I could make, or offer their own that they
