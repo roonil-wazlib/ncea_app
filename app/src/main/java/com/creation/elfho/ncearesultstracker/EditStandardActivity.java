@@ -12,6 +12,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 /**
@@ -26,7 +29,7 @@ public class EditStandardActivity extends Activity {
     private ImageView up, down;
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
@@ -40,6 +43,10 @@ public class EditStandardActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_standard);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         credits = (TextView)findViewById(R.id.credits);
         standardType = (Switch)findViewById(R.id.standardType);

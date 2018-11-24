@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 /**
@@ -26,7 +29,7 @@ public class StandardInfoActivity extends Activity {
 
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
-
+    private AdView mAdView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
@@ -40,6 +43,10 @@ public class StandardInfoActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_standard_info);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         myDb = new DatabaseHelper(this);
 

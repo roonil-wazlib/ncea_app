@@ -11,6 +11,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 /**
  * Created by elfho on 21/01/2018.
  */
@@ -22,7 +25,7 @@ public class NewStandardDetailsActivity extends Activity {
     private ImageView up, down;
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
@@ -36,6 +39,10 @@ public class NewStandardDetailsActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newstandard_details);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         standardName = (TextView)findViewById(R.id.standardName);
         credits = (TextView)findViewById(R.id.credits);

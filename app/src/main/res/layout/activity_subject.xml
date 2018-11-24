@@ -150,7 +150,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:onClick="onMeritClick">
 
             <TextView
                 android:id="@+id/m"
@@ -212,7 +213,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:onClick="onExcellenceClick">
             <TextView
                 android:id="@+id/e"
                 android:layout_width="wrap_content"
@@ -259,6 +261,67 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/endorseInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp">
+
+        <!--merit endorse detail-->
+        <LinearLayout
+            android:id="@+id/meritEndorseInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/layout_border">
+
+            <CheckBox
+                android:id="@+id/merit_int"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3/3 Int"
+                android:textColor="?attr/textcolor"
+                android:clickable="false"/>
+            <CheckBox
+                android:id="@+id/merit_ext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3/3 Ext"
+                android:textColor="?attr/textcolor"
+                android:clickable="false"/>
+        </LinearLayout>
+        <!--excellence endorse detail-->
+        <LinearLayout
+            android:id="@+id/excellenceEndorseInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/layout_border">
+            <CheckBox
+                android:id="@+id/excellence_int"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3/3 Int"
+                android:textColor="?attr/textcolor"
+                android:clickable="false"/>
+            <CheckBox
+                android:id="@+id/excellence_ext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3/3 Ext"
+                android:textColor="?attr/textcolor"
+                android:clickable="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
@@ -298,4 +361,14 @@
                 app:elevation="4dp"/>
         </FrameLayout>
     </LinearLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2997244423292030/3486771601">
+    </com.google.android.gms.ads.AdView>
 </LinearLayout>

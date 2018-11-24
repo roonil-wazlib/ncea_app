@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 /**
@@ -30,6 +33,7 @@ public class Level3Activity extends AppCompatActivity implements OnClickListener
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
     private FloatingActionButton fab;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,10 @@ public class Level3Activity extends AppCompatActivity implements OnClickListener
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level3);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         myDb = new DatabaseHelper(this);
 

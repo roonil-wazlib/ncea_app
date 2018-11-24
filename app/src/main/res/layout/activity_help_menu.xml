@@ -86,9 +86,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copyright @ Emma Hogan 2018"
+        android:text="App by Emma Hogan 2018"
         android:textSize="12dp"
         android:textColor="#ffffffff"
         android:gravity="center"
         android:padding="3dp"/>
+
 </LinearLayout>

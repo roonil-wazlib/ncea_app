@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 /**
  * Created by elfho on 20/12/2017.
  */
@@ -19,7 +22,7 @@ public class NewStandardActivity extends Activity {
     DatabaseHelper myDb;
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
@@ -33,6 +36,11 @@ public class NewStandardActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newstandard);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         myDb = new DatabaseHelper(this);
         savebtn = (Button)findViewById(R.id.savebtn);
         enteredStandard = (EditText)findViewById(R.id.enteredStandard);

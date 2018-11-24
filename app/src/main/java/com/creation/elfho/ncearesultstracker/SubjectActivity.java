@@ -13,11 +13,15 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 
@@ -32,16 +36,18 @@ public class SubjectActivity extends Activity {
     private ImageView deleteBtn, backBtn;
     String [] deleteOptions = {"Yes", "No"};
     private ListView lv, gradeView;
-    private LinearLayout mEndorseBar;
+    private LinearLayout mEndorseBar, endorseInfo, meritEndorseInfo, excellenceEndorseInfo;
     private FloatingActionButton fab;
+    private CheckBox merit_int, merit_ext, excellence_int, excellence_ext;
     View clickSource;
     View touchSource;
-
+    int meritVisible = 0;
+    int excellenceVisible = 0;
     int offset = 0;
 
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
@@ -55,6 +61,10 @@ public class SubjectActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         myDb = new DatabaseHelper(this);
 
@@ -84,13 +94,20 @@ public class SubjectActivity extends Activity {
         noCredits = (TextView)findViewById(R.id.noCredits);
         mEndorseBar = (LinearLayout)findViewById(R.id.mEndorseBar);
         fab = (FloatingActionButton)findViewById(R.id.add_standard);
+        endorseInfo = (LinearLayout)findViewById(R.id.endorseInfo);
+        excellenceEndorseInfo = (LinearLayout)findViewById(R.id.excellenceEndorseInfo);
+        meritEndorseInfo = (LinearLayout)findViewById(R.id.meritEndorseInfo);
+        merit_int = (CheckBox)findViewById(R.id.merit_int);
+        merit_ext = (CheckBox)findViewById(R.id.merit_ext);
+        excellence_int = (CheckBox)findViewById(R.id.excellence_int);
+        excellence_ext = (CheckBox)findViewById(R.id.excellence_ext);
 
         if (sharedpreferences.contains("color")){
             if (sharedpreferences.getString("color", "").contains("day")) {
                 fab.setImageResource(R.drawable.fab_plus_day);
             }
         }
-
+        setEndorseInfoVisibility();
         ArrayList<String> mArrayList = myDb.getStandards(subjectId);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
@@ -197,6 +214,7 @@ public class SubjectActivity extends Activity {
 
         subjecttxt.setText(subject);
         getCreditInfo();
+
     }
 
     public interface ItemClickAdapterListener {
@@ -321,7 +339,21 @@ public class SubjectActivity extends Activity {
         int excellenceInternalCredits = getCreditsForEndorsement(excellenceInternalArrayList);
         int meritExternalCredits = getCreditsForEndorsement(meritExternalArrayList);
         int meritInternalCredits = getCreditsForEndorsement(meritInternalArrayList);
-
+        //set checkboxes
+        if(excellenceExternalCredits >= 3){
+            //check excellence_ext
+            excellence_ext.setChecked(true);
+        }
+        if(excellenceInternalCredits >= 3){
+            //check excellence_int
+            excellence_int.setChecked(true);
+        }
+        if(excellenceExternalCredits + meritExternalCredits >= 3){
+            merit_ext.setChecked(true);
+        }
+        if(excellenceInternalCredits + meritInternalCredits >= 3){
+            merit_int.setChecked(true);
+        }
         int totalExcellenceCredits = excellenceExternalCredits + excellenceInternalCredits;
         int totalMeritCredits = meritExternalCredits + meritInternalCredits;
         int totalAchievedCredits = getCreditsForEndorsement(achievedExternalArrayList) + getCreditsForEndorsement(achievedInternalArrayList);
@@ -481,6 +513,36 @@ public class SubjectActivity extends Activity {
                 e);
         eCredits.setLayoutParams(param3);
         exc.setLayoutParams(param3);
+    }
+
+    public void setEndorseInfoVisibility(){
+        excellenceEndorseInfo.setVisibility(View.GONE);
+        meritEndorseInfo.setVisibility(View.GONE);
+    }
+
+    public void onMeritClick(View view){
+        if(meritVisible==0){
+            meritEndorseInfo.setVisibility(View.VISIBLE);
+            excellenceEndorseInfo.setVisibility(View.INVISIBLE);
+            meritVisible = 1;
+        }
+        else{
+            meritEndorseInfo.setVisibility(View.GONE);
+            excellenceEndorseInfo.setVisibility(View.GONE);
+            meritVisible = 0;
+        }
+    }
+    public void onExcellenceClick(View view){
+        if(excellenceVisible==0){
+            excellenceEndorseInfo.setVisibility(View.VISIBLE);
+            meritEndorseInfo.setVisibility(View.INVISIBLE);
+            excellenceVisible = 1;
+        }
+        else{
+            excellenceEndorseInfo.setVisibility(View.GONE);
+            meritEndorseInfo.setVisibility(View.GONE);
+            excellenceVisible = 0;
+        }
     }
 }
 

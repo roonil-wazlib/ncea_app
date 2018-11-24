@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 /**
@@ -22,7 +25,7 @@ public class AddGradeActivity extends Activity {
     private TextView goalGradeTxt;
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
@@ -36,6 +39,10 @@ public class AddGradeActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_grade);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         goalGradeImg = (ImageView) findViewById(R.id.goalGradeImg);
         mockGradeImg = (ImageView) findViewById(R.id.mockGradeImg);

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,7 +21,7 @@ public class SplashScreenActivity extends Activity implements View.OnClickListen
     public static final String mypreference = "mypref";
     String currentLanguage = "en", currentLang;
     private ImageView logo, settings;
-    String [] studyTips = {"Study tip: Try to explain difficult concepts to others to help you learn them better.", "Study tip: Practicing past NCEA papers is the most useful way of anticipating what will be in your exam.", "Study tip: Make a cheat sheet of each standard before your exam. You can't take it in, but summarising everything you need to know will help you concentrate on only what is relevant.", "Study tip: Highlighting doesn't help you memorise, Becky. Try some flashcards.", "Study tip: Try the Pomodoro technique - 25 minutes of work, then a 5 minute break to recharge.", "Exam tip: Remember your tissues, no-one wants to hear you sniffing in the middle of their chemistry paper.", "Exam tip: You can install an update for graphics calculators that displays answers in terms of Pi and surd form. It won't get wiped on a reset and can save your life in calculus.", "Study tip: If you have no friends, explaining things to your cat is a good substitute.", "Exam tip: remember to bring like 300 pens because I swear they will all run out of ink in the middle of your first essay.", "Exam tip: you can actually find out what's going to be on the exam ahead of time. It's published in a top secret location called the marking schedule.", "Study tip: If tomorrow's not the due date, today's not the do date.", "Study tip: Make a table of the topics of the questions on past exams to identify what is most likely to come up."};
+    String [] studyTips = {"Study tip: Try to explain difficult concepts to others to help you learn them better.", "Study tip: Practicing past NCEA papers is the most useful way of anticipating what will be in your exam.", "Study tip: Make a cheat sheet of each standard before your exam. You can't take it in, but summarising everything you need to know will help you concentrate on only what is relevant.", "Study tip: Highlighting doesn't help you memorise, Becky. Try some flashcards.", "Study tip: Try the Pomodoro technique - 25 minutes of work, then a 5 minute break to recharge.", "Exam tip: Remember your tissues, no-one wants to hear you sniffing in the middle of their chemistry paper.", "Exam tip: You can install an update for graphics calculators that displays answers in terms of Pi and surd form. It won't get wiped on a reset and can save your life in calculus.", "Study tip: If you have no friends, explaining things to your cat is a good substitute.", "Exam tip: remember to bring like 300 pens because I swear they will all run out of ink in the middle of your first essay.", "Exam tip: you can actually find out what's going to be on the exam ahead of time. It's published in a top secret location called the marking schedule.", "Study tip: If tomorrow's not the due date, today's not the do date.", "Study tip: Make a table of the topics of the questions on past exams to identify what is most likely to come up.", "Study tip: Make sure you have plenty of healthy snacks at your desk to keep your concentration up when studying.", "Exam tip: Remember when you exam is for Christ's sake how do people screw that up?!"};
     private TextView studyTip;
     private int current;
 
@@ -27,6 +29,9 @@ public class SplashScreenActivity extends Activity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
+
+        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+        MobileAds.initialize(this, "ca-app-pub-2997244423292030~9971169343");
 
         //set theme before starting activity
         if (sharedpreferences.contains("color")){

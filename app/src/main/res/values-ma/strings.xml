@@ -10,9 +10,9 @@
     <string name="settings">Tautuhina</string>
     <string name="current_level">Taumata o N\u0101ianei</string>
     <string name="current_level_descrip">Ka tuwhera te taup\u0101nga ki tenei taumata taunoa.</string>
-    <string name="level1">Taumata 1</string>
-    <string name="level2">Taumata 2</string>
-    <string name="level3">Taumata 3</string>
+    <string name="level1">Kaupae 1</string>
+    <string name="level2">Kaupae 2</string>
+    <string name="level3">Kaupae 3</string>
     <string name="language">Reo</string>
     <string name="english">English</string>
     <string name="maori">M\u0101ori</string>
