@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -99,6 +100,9 @@ public class Level1Activity extends Activity implements OnClickListener {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this, R.layout.subject_list_item, mArrayList);
         lv.setAdapter(arrayAdapter);
+
+        View footerView =  ((LayoutInflater)Level1Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.subject_list_footer, null, false);
+        lv.addFooterView(footerView);
 
         // listening to single list item on click
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

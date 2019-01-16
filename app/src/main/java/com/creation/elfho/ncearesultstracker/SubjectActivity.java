@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
@@ -114,11 +115,17 @@ public class SubjectActivity extends Activity {
                 this, R.layout.subject_list_item, mArrayList);
         lv.setAdapter(arrayAdapter);
 
+        View footerView =  ((LayoutInflater)SubjectActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.subject_list_footer, null, false);
+        lv.addFooterView(footerView);
+
         ArrayList<String> gradeList = myDb.getGrades(subjectId);
 
         ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(
                 this, R.layout.subject_list_item, gradeList);
         gradeView.setAdapter(arrayAdapter2);
+
+        View footerView2 =  ((LayoutInflater)SubjectActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.subject_list_footer, null, false);
+        gradeView.addFooterView(footerView2);
 
         //make listviews scroll simultaneously
         lv.setOnTouchListener(new View.OnTouchListener() {
