@@ -45,6 +45,7 @@ public class SubjectActivity extends Activity {
     int meritVisible = 0;
     int excellenceVisible = 0;
     int offset = 0;
+    
 
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
