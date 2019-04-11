@@ -20,5 +20,6 @@
     <string name="colorTheme">Colour Theme</string>
     <string name="night">Night</string>
     <string name="day">Day</string>
+    <string name="entry_message">TOUCH TO ENTER</string>
 
 </resources>

@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ import com.google.android.gms.ads.MobileAds;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class SplashScreenActivity extends Activity implements View.OnClickListener {
@@ -24,6 +28,7 @@ public class SplashScreenActivity extends Activity implements View.OnClickListen
     String [] studyTips = {"Study tip: Try to explain difficult concepts to others to help you learn them better.", "Study tip: Practicing past NCEA papers is the most useful way of anticipating what will be in your exam.", "Study tip: Make a cheat sheet of each standard before your exam. You can't take it in, but summarising everything you need to know will help you concentrate on only what is relevant.", "Study tip: Highlighting doesn't help you memorise, Becky. Try some flashcards.", "Study tip: Try the Pomodoro technique - 25 minutes of work, then a 5 minute break to recharge.", "Exam tip: Remember your tissues, no-one wants to hear you sniffing in the middle of their chemistry paper.", "Exam tip: You can install an update for graphics calculators that displays answers in terms of Pi and surd form. It won't get wiped on a reset and can save your life in calculus.", "Study tip: If you have no friends, explaining things to your cat is a good substitute.", "Exam tip: remember to bring like 300 pens because I swear they will all run out of ink in the middle of your first essay.", "Exam tip: you can actually find out what's going to be on the exam ahead of time. It's published in a top secret location called the marking schedule.", "Study tip: If tomorrow's not the due date, today's not the do date.", "Study tip: Make a table of the topics of the questions on past exams to identify what is most likely to come up.", "Study tip: Make sure you have plenty of healthy snacks at your desk to keep your concentration up when studying.", "Exam tip: Remember when you exam is for Christ's sake how do people screw that up?!"};
     private TextView studyTip;
     private int current;
+    Locale myLocale;
 
 
     @Override
@@ -52,6 +57,18 @@ public class SplashScreenActivity extends Activity implements View.OnClickListen
                 logo.setImageResource(R.drawable.app_logo_transparent_black);
             }
         }
+
+        //if (sharedpreferences.contains("language")){
+            //if (sharedpreferences.getString("language", "").contains("english")) {
+                //currentLanguage = "en";
+            //}
+            //else {
+                //currentLanguage = "ma";
+            //}
+            //setLocale(currentLanguage);
+        //}
+
+
         Random random = new Random();
         int index = random.nextInt(studyTips.length);
         current = index;
@@ -99,5 +116,19 @@ public class SplashScreenActivity extends Activity implements View.OnClickListen
         }
 
         studyTip.setText(studyTips[current]);
+    }
+
+    public void setLocale(String localeName){
+        myLocale = new Locale(localeName);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(this, SettingsActivity.class);
+        refresh.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        refresh.putExtra("refresh", 0);
+        startActivity(refresh);
+        overridePendingTransition(0,0);
     }
 }

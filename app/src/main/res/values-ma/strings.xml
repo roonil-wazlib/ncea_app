@@ -20,5 +20,6 @@
     <string name="colorTheme">Te Kaupapa Tae</string>
     <string name="night">Po</string>
     <string name="day">Ra</string>
+    <string name="entry_message">PA KI TE TOMO</string>
 
 </resources>

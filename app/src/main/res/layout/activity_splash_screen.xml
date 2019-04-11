@@ -48,7 +48,7 @@
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:layout_weight="0.5"
-        android:text="TOUCH TO ENTER"
+        android:text="@string/entry_message"
         android:textSize="18dp"
         android:textColor="?attr/textcolor"
         android:gravity="center"/>

@@ -18,7 +18,7 @@ import java.util.Map;
  * Created by elfho on 19/03/2018.
  */
 
-public class ResultsActivity extends Activity {
+public class       ResultsActivity extends Activity {
     private TextView achTxtOverall, merTxtOverall, excTxtOverall, achTxtMock, merTxtMock, excTxtMock, achTxtGoal, merTxtGoal, excTxtGoal, achBarOverall, merBarOverall, excBarOverall, achBarMock, merBarMock, excBarMock, achBarGoal, merBarGoal, excBarGoal, noCreditsOverall, noCreditsMock, noCreditsGoal, title, goalMTxt, goalETxt, goalEforM, goalMforM, goalNullforM, goalEforE, goalNullforE, mockMTxt, mockETxt, mockEforM, mockMforM, mockNullforM, mockEforE, mockNullforE, overallMTxt, overallETxt, overallEforM, overallMforM, overallNullforM, overallEforE, overallNullforE, rankScoreInfo, goalRankScore, mockRankScore, overallRankScore, rankScoreWarning;
     DatabaseHelper myDb;
     private LinearLayout goalMEndorseBar, mockMEndorseBar, overallMEndorseBar;
