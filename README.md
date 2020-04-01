@@ -1,13 +1,3 @@
-"# ncea_results_tracker"
+# NCEA Results Tracker
 
-If you want to use this code to help with your own
-projects or learning feel free to download this project.
-
-
-I am also more than happy for anyone to either suggest
-improvements I could make, or offer their own that they
-would like to add to the project. If you'd like to make
-changes it'd be great if you let me know first so I can
-confirm that it won't conflict with anything I'm doing,
-but after that I'm more than happy to merge any improvements
-or fixes that you come up with.
+A project to store and track progress towards NCEA highschool qualifications. By allowing the user to enter goal and mock grades for each of their standards as well as final grades, mock external performance can be forcasted on top of internal performance to help students predict their end of year results and inform their studying.
